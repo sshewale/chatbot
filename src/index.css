@@ -1,0 +1,357 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+* {
+  box-sizing: border-box;
+}
+html {
+  background: rgba(0, 0, 0, 0.03);
+}
+body, html {
+  height: 100%;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 115%;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.chat-output {
+  flex: 1;
+  display: flex;
+  background: white;
+  flex-direction: column-reverse;
+  overflow:auto;
+}
+
+.chat-output-inner > div {
+  margin: 5px 5px 10px 5px;
+}
+
+.chat-output-inner .user-message {
+  display: block;
+  margin: 5px 5px 10px 5px;
+  max-width: 250px;
+  width:100%;
+  float: right;
+}
+
+.chat-output-inner .bot-message {
+  margin-top: 15px;
+  max-width: 250px;
+  display: block;
+  float: left;
+}
+.bot-message video{
+  width : 100%;
+  height : 100%;
+  border: 3px double #0fb0df;
+}
+
+.bot-message .respImg{
+  width: 65%;
+  height:65%;
+  cursor: pointer;
+}
+
+.respImg:hover {opacity: 0.8;}
+
+.chat-output-inner .bot-master-message {
+  max-width: 100%;
+  display: block;
+  float: left;
+  cursor: pointer;
+  margin: 5px ;
+}
+
+.chat-output-inner .user-message .message {
+  float: right;
+  background: #0fb0df;
+  color: white;
+  hyphens: auto;
+}
+.chat-output-inner .bot-message .message {
+  /*background: darkturquoise;*/
+  background: #eee;
+  hyphens: auto;
+}
+.chat-output-inner .bot-master-message .message {
+  background: #d0ddf2;
+  hyphens: auto;
+  padding: 10px 15px;
+  /*text-decoration: underline;
+  animation: glow 0.7s infinite alternate;*/
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 1px -1px #d0ddf2;
+  }
+  to {
+    box-shadow: 0 0 1px 1px #d0ddf2;
+  }
+}
+
+.chat-output-inner .message {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+.chat-input {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+}
+
+/********************************************/
+
+.login-box-visible{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+    background:white;
+    font-family: monospace;
+    position: fixed;
+    bottom: 32px;
+    top: initial;
+    right: 32px;
+    left: initial;
+    width: 350px;
+    height: 520px;
+    z-index: 999;
+    transform: scale(0);
+    transform-origin: right bottom;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease 0s;
+}
+.chat-box-visible{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+    font-family: monospace;
+    position: fixed;
+    bottom: 32px;
+    top: initial;
+    right: 32px;
+    left: initial;
+    width: 350px;
+    height: 520px;
+    z-index: 999;
+    transform: scale(1);
+    transform-origin: right bottom;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease 0s;
+}
+
+.chat-header{
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+  fill: rgb(255, 255, 255);
+  height: 56px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  background: #0fb0df;
+  padding: 0px 10px;
+}
+
+.chat-header-h2{
+  font-size: 20px;
+  margin: 10px;
+}
+.chat-header-close-button{
+  cursor: pointer;
+}
+.chat-output-content{
+  height: calc(410px);
+    overflow-y: scroll;
+    padding-top: 6px;
+}
+
+.user-input-text{
+  border-right-style: initial;
+  border-bottom-style: initial;
+  border-left-style: initial;
+  border-right-color: initial;
+  border-bottom-color: initial;
+  border-left-color: initial;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 16px;
+  opacity: 0.5;
+  width: 100%;
+  -webkit-appearance: none;
+  border-width: 1px 0px 0px;
+  border-image: initial;
+  border-radius: 0px 0px 10px 10px;
+  border-top: 1px solid rgb(238, 238, 238);
+  outline: none;
+  padding: 16px 52px 16px 10px;
+}
+
+.submit-button{
+  background-color: transparent;
+  border-bottom-right-radius: 10px;
+  box-shadow: none;
+  cursor: default;
+  fill: rgb(74, 74, 74);
+  opacity: 0.5;
+  position: absolute;
+  right: 0px;
+  /*top: 0px;*/
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  outline: none;
+  padding: 14px 16px 12px;
+}
+
+.chat-popup {
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    bottom: 32px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+    display: flex;
+    fill: rgb(255, 255, 255);
+    height: 56px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: fixed;
+    right: 32px;
+    transform: scale(1);
+    width: 56px;
+    z-index: 999;
+    background: #0fb0df;
+    border-radius: 100%;
+    transition: transform 0.3s ease 0s;
+}
+.chat-popup-hide {
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  bottom: 32px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+  display: flex;
+  fill: rgb(255, 255, 255);
+  height: 56px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: fixed;
+  right: 32px;
+  transform: scale(0);
+  width: 56px;
+  z-index: 999;
+  background: #0fb0df;
+  border-radius: 100%;
+  transition: transform 0.3s ease 0s;
+}
+
+
+.static-title{
+	  margin: auto;
+    width: 60%;
+   /* padding: 10px;
+    font-size: 24px;
+    text-align: center;*/
+}
+.static-text{
+	  margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+.static-text p{
+  width: 55%;
+}
+.static-body{
+  background-image: url(./Picture2.jpg);
+  background-size: contain;
+  color:white;
+}
+
+
+
+/*************** Image box modal popup ***********************/
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 265px;
+}
+
+
+/* Add Animation */
+.modal-content {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
